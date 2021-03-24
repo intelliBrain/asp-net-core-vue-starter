@@ -1,36 +1,28 @@
 <template>
   <div>
-    <p>
-      Current count (Vuex):
-      <strong>{{ currentCount }}</strong>
-    </p>
-    <v-btn class="ma-2" color="info" @click.prevent="increment">Increment</v-btn>
-    <v-btn class="ma-2" color="info" @click.prevent="reset">Reset</v-btn>
+    <button v-on:click="decrement">-</button>
+    {{ count }}
+    <button v-on:click="increment">+</button>
   </div>
 </template>
 
-<script lang="ts">
-import { Action, Getter } from 'vuex-class'
-import { Component, Vue } from 'vue-property-decorator'
-const namespace = 'counter'
+<script>
+import Vue from 'vue'
+import Component from 'vue-class-component'
 
+// Define the component in class-style
 @Component
 export default class Counter extends Vue {
-  @Getter('currentCount', { namespace })
-  private currentCount!: number
+  // Class properties will be component data
+  count = 0
 
-  @Action('increment', { namespace })
-  private incrementCounter!: () => void
-
-  @Action('reset', { namespace })
-  private resetCounter!: () => void
-
-  private increment() {
-    this.incrementCounter()
+  // Methods will be component methods
+  increment() {
+    this.count++
   }
 
-  private reset() {
-    this.resetCounter()
+  decrement() {
+    this.count--
   }
 }
 </script>

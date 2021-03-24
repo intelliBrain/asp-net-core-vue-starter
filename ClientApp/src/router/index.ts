@@ -1,33 +1,27 @@
-import Vue from 'vue'
-import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
+import { route } from 'quasar/wrappers';
+import VueRouter from 'vue-router';
+import { Store } from 'vuex';
+import { StateInterface } from '../store';
+import routes from './routes';
 
-Vue.use(VueRouter)
+/*
+ * If not building with SSR mode, you can
+ * directly export the Router instantiation
+ */
 
-const routes: Array<RouteConfig> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/counter',
-    name: 'counter',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "counter" */ '../views/Counter.vue')
-  },
-  {
-    path: '/fetch-data',
-    name: 'fetch-data',
-    component: () => import(/* webpackChunkName: "fetch-data" */ '../views/FetchData.vue')
-  }
-]
+export default route<Store<StateInterface>>(function ({ Vue }) {
+  Vue.use(VueRouter);
 
-const router = new VueRouter({
-  mode: 'history',
-  routes
+  const Router = new VueRouter({
+    scrollBehavior: () => ({ x: 0, y: 0 }),
+    routes,
+
+    // Leave these as is and change from quasar.conf.js instead!
+    // quasar.conf.js -> build -> vueRouterMode
+    // quasar.conf.js -> build -> publicPath
+    mode: process.env.VUE_ROUTER_MODE,
+    base: process.env.VUE_ROUTER_BASE
+  });
+
+  return Router;
 })
-
-export default router
