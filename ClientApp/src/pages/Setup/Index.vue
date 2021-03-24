@@ -1,7 +1,8 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <!-- <Header></Header> -->
-    <h1>Page 1</h1>
+  <q-page>
+    <div class="q-pa-md">
+      <h4 class="q-ma-xs">Setup</h4>
+    </div>
   </q-page>
 </template>
 
@@ -10,7 +11,7 @@
   //import Header from '../components/Header.vue'
 
   export default Vue.extend({
-    name: 'Page1',
+    name: 'SetupMain',
     props: [],
     components: {
       //Header

@@ -3,12 +3,31 @@ import { RouteConfig } from 'vue-router';
 const routes: RouteConfig[] = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/StartLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-      { path: '/page1', component: () => import('pages/Page1.vue') },
-      { path: '/page2', component: () => import('pages/Page2.vue') },
-      { path: '/page3', component: () => import('pages/Page3.vue') }
+    ]
+  },
+  {
+    path: '/runs',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('src/pages/Runs/Index.vue') }
+    ]
+  },
+  {
+    path: '/runs',
+    component: () => import('layouts/RunEditLayout.vue'),
+    children: [
+      { path: 'create', component: () => import('pages/Runs/Create.vue') },
+      { path: 'edit', component: () => import('pages/Runs/Edit.vue') }
+    ]
+  },
+  {
+    path: '/setup',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Setup/Index.vue') },
     ]
   },
 

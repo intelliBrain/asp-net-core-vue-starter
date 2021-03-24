@@ -1,44 +1,23 @@
 <template>
-  <q-page class="row items-center justify-evenly">
+  <q-page class="row">
+    <div class="col">
+      <div class="q-pa-md">
+        <h4 class="q-ma-xs">Start</h4>
+      </div>
+      <div class="q-pa-md">
+        <q-btn class="q-mr-sm" color="white" icon="o_play_arrow" text-color="black" label="Runs" to="/runs" />
+        <q-btn class="q-mr-sm" color="white" icon="o_settings" text-color="black" label="Setup" to="/setup" />
+      </div>
+    </div>
   </q-page>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-//import Counter from './src/components/Counter.vue';
+  import Vue from 'vue'
 
-import { defineComponent, ref } from '@vue/composition-api';
-
-export default defineComponent({
-  name: 'PageIndex',
-  components: { },
-  setup() {
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1x'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ]);
-    const meta = ref<Meta>({
-      totalCount: 1200
-    });
-    return { todos, meta };
-  }
-});
+  export default Vue.extend({
+    name: 'StartPage',
+    props: [],
+    components: {}
+  })
 </script>

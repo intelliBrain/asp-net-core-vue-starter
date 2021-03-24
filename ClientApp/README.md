@@ -1,4 +1,4 @@
-# Quasar App (quasar-client-app)
+# Genexyz (quasar-client-app)
 
 A Quasar Framework app
 

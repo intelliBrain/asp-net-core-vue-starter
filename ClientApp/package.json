@@ -1,8 +1,8 @@
 {
   "name": "quasar-client-app",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "description": "Genexyz UI app",
+  "productName": "Genexyz",
   "author": "Rene Hanslin <rene.hanslin@hseag.com>",
   "private": true,
   "scripts": {

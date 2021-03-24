@@ -14,8 +14,8 @@
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="/runs" label="Runs" />
-        <q-route-tab to="/setup" label="Setup" />
+        <q-route-tab disable to="/runs" label="Runs" />
+        <q-route-tab disable to="/setup" label="Setup" />
       </q-tabs>
     </q-header>
 

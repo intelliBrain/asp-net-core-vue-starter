@@ -45,6 +45,8 @@ module.exports = configure(function (/* ctx */) {
 
       'roboto-font', // optional, you are not bound to it
       'material-icons', // optional, you are not bound to it
+      'material-icons-outlined'
+      //'material-icons-round'
     ],
 
     // Full list of options: https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
@@ -83,7 +85,7 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
-      iconSet: 'material-icons', // Quasar icon set
+      iconSet: 'material-icons-outlined', // Quasar icon set
       lang: 'en-us', // Quasar language pack
       config: {},
 
@@ -117,9 +119,9 @@ module.exports = configure(function (/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Quasar App',
-        short_name: 'Quasar App',
-        description: 'A Quasar Framework app',
+        name: 'Genexyz',
+        short_name: 'Genexyz',
+        description: 'Genexyz UI',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
