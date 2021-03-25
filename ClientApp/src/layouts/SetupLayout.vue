@@ -22,12 +22,12 @@
     <q-drawer show-if-above v-model="left" side="left" behavior="desktop" elevated :width=250>
       <q-scroll-area style="height: calc(100% - 200px); margin-top: 200px; border-right: 1px solid #ddd">
         <q-list>
+
           <template v-for="(menuItem, index) in menuList">
             <q-item
               :key="index"
               :to="menuItem.to"
               exact
-              :disable="menuDisabled(menuItem.to)"
             >
               <q-item-section avatar>
                 <q-icon :name="menuItem.icon" />
@@ -53,7 +53,6 @@
 </template>
 
 <script lang="ts">
-import {VueRouter} from 'vue-router/types/router'
 interface DrawerMenuItem {
   icon: string
   label: string
@@ -63,10 +62,34 @@ interface DrawerMenuItem {
 
 const menuList: DrawerMenuItem[] = [
   {
-    icon: 'list',
-    label: 'Available Runs',
+    icon: 'o_settings',
+    label: 'Common',
     separator: false,
-    to: '/runs'
+    to: '/setup'
+  },
+  {
+    icon: 'o_biotech',
+    label: 'Microscope',
+    separator: false,
+    to: '/setup/microscope'
+  },
+  {
+    icon: 'o_precision_manufacturing',
+    label: 'Tray Handler',
+    separator: false,
+    to: '/setup/tray-handler'
+  },
+  {
+    icon: 'o_opacity',
+    label: 'Sample Preparator',
+    separator: false,
+    to: '/setup/sample-preparator'
+  },
+  {
+    icon: 'o_thermostat',
+    label: 'Incubator',
+    separator: false,
+    to: '/setup/incubator'
   },
 ]
 
@@ -77,13 +100,6 @@ export default {
       menuList
     }
   },
-  methods: {
-    menuDisabled: function(to:string): boolean {
-      let router: VueRouter = <VueRouter> this.$router
-      //console.log(`to: [${to}] => currentRoute.Path: [${router.currentRoute.path}] => isDisabled=${router.currentRoute.path != to}`)
-      return router.currentRoute.path != to
-    }
-  }
 }
 
 </script>

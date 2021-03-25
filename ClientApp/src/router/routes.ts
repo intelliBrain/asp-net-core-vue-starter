@@ -24,10 +24,26 @@ const routes: RouteConfig[] = [
     ]
   },
   {
-    path: '/setup',
-    component: () => import('layouts/MainLayout.vue'),
+    path: '/runs',
+    component: () => import('layouts/WizardLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Setup/Index.vue') },
+      { path: 'initialize', component: () => import('pages/Runs/StepInitialize.vue') },
+      { path: 'overview-scan', component: () => import('pages/Runs/StepOverviewScan.vue') },
+      { path: 'roi-selection', component: () => import('pages/Runs/StepRoiSelection.vue') },
+      { path: 'config', component: () => import('pages/Runs/StepConfiguration.vue') },
+      { path: 'run', component: () => import('pages/Runs/ExperimentRun.vue') },
+      { path: 'result', component: () => import('pages/Runs/ExperimentResult.vue') }
+    ]
+  },
+  {
+    path: '/setup',
+    component: () => import('layouts/SetupLayout.vue'),
+    children: [
+      { path: '', component: () => import('src/pages/Setup/Common.vue') },
+      { path: 'microscope', component: () => import('pages/Setup/Microscope.vue') },
+      { path: 'tray-handler', component: () => import('pages/Setup/TrayHandler.vue') },
+      { path: 'sample-preparator', component: () => import('pages/Setup/SamplePreparator.vue') },
+      { path: 'incubator', component: () => import('pages/Setup/Incubator.vue') },
     ]
   },
 

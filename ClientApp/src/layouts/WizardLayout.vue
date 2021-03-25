@@ -14,14 +14,15 @@
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="/runs" label="Runs" />
-        <q-route-tab to="/setup" label="Setup" />
+        <q-route-tab disable to="/runs" label="Runs" />
+        <q-route-tab disable to="/setup" label="Setup" />
       </q-tabs>
     </q-header>
 
     <q-drawer show-if-above v-model="left" side="left" behavior="desktop" elevated :width=250>
       <q-scroll-area style="height: calc(100% - 200px); margin-top: 200px; border-right: 1px solid #ddd">
         <q-list>
+
           <template v-for="(menuItem, index) in menuList">
             <q-item
               :key="index"
@@ -63,11 +64,41 @@ interface DrawerMenuItem {
 
 const menuList: DrawerMenuItem[] = [
   {
-    icon: 'list',
-    label: 'Available Runs',
+    icon: 'o_create_new_folder',
+    label: 'Initialize',
     separator: false,
-    to: '/runs'
+    to: '/runs/initialize'
   },
+  {
+    icon: 'o_camera',
+    label: 'Overview Scan',
+    separator: false,
+    to: '/runs/overview-scan'
+  },
+  {
+    icon: 'o_crop',
+    label: 'ROI Selection',
+    separator: false,
+    to: '/runs/roi-selection'
+  },
+  {
+    icon: 'o_tune',
+    label: 'Configuration',
+    separator: false,
+    to: '/runs/config'
+  },
+  {
+    icon: 'o_play_arrow',
+    label: 'Experiment Run',
+    separator: false,
+    to: '/runs/run'
+  },
+  {
+    icon: 'o_feedback',
+    label: 'Experiment Results',
+    separator: false,
+    to: '/runs/result'
+  }
 ]
 
 export default {

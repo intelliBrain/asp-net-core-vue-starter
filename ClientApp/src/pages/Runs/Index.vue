@@ -6,6 +6,8 @@
     <div class="q-pa-md">
       <q-btn class="q-mr-sm" color="white" icon="o_refresh" text-color="black" label="Refresh" />
       <q-btn class="q-mr-sm" color="white" icon="o_add" text-color="black" label="Create New Run" to="/runs/create" />
+      <q-btn class="q-mr-sm" color="white" icon="o_create" text-color="black" label="Edit Run (TEMP)" to="/runs/edit" />
+      <q-btn class="q-mr-sm" color="white" icon="o_play_arrow" text-color="black" label="Run Experiment (TEMP)" to="/runs/initialize" />
     </div>
     <div class="q-pa-md">
       <q-table
