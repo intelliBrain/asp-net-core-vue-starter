@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lhh lpR fff">
 
-    <q-header elevated class="bg-grey-7 text-white" height-hint="98">
+    <q-header bordered class="bg-grey-7 text-white" height-hint="98">
       <q-toolbar>
         <!-- <q-btn dense flat round icon="menu" @click="left = !left" /> -->
 
@@ -19,7 +19,7 @@
       </q-tabs>
     </q-header>
 
-    <q-drawer show-if-above v-model="left" side="left" behavior="desktop" elevated :width=250>
+    <q-drawer show-if-above v-model="left" side="left" behavior="desktop" bordered :width=250>
       <q-scroll-area style="height: calc(100% - 200px); margin-top: 200px; border-right: 1px solid #ddd">
       </q-scroll-area>
       <q-img class="absolute-top bg-transparent q-ma-md" src="../assets/genexyz_logo_mockup.png" style="width: 200px">

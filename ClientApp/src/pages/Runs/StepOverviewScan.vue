@@ -4,7 +4,7 @@
     <div class="q-pa-md">
       <h4 class="q-ma-xs">Scan Overview Image</h4>
     </div>
-    <div class="q-pa-md">
+    <div class="q-pa-md" v-if="microscopeState">
       <div class="q-ma-xs">{{microscopeState}}</div>
     </div>
 
@@ -41,7 +41,7 @@
       return {
         busy: false,
         hasErrors: false,
-        microscopeState: 'Microscope door open.',
+        microscopeState: '',
         callToAction: '',
         runLog: []
       }
