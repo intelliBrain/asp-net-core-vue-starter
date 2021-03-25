@@ -53,53 +53,55 @@
 </template>
 
 <script lang="ts">
-interface DrawerMenuItem {
-  icon: string
-  label: string
-  separator: boolean
-  to: string
-}
+  import Vue from 'vue'
 
-const menuList: DrawerMenuItem[] = [
-  {
-    icon: 'o_settings',
-    label: 'Common',
-    separator: false,
-    to: '/setup'
-  },
-  {
-    icon: 'o_biotech',
-    label: 'Microscope',
-    separator: false,
-    to: '/setup/microscope'
-  },
-  {
-    icon: 'o_precision_manufacturing',
-    label: 'Tray Handler',
-    separator: false,
-    to: '/setup/tray-handler'
-  },
-  {
-    icon: 'o_opacity',
-    label: 'Sample Preparator',
-    separator: false,
-    to: '/setup/sample-preparator'
-  },
-  {
-    icon: 'o_thermostat',
-    label: 'Incubator',
-    separator: false,
-    to: '/setup/incubator'
-  },
-]
+  interface DrawerMenuItem {
+    icon: string
+    label: string
+    separator: boolean
+    to: string
+  }
 
-export default {
-  data () {
-    return {
-      left: false,
-      menuList
-    }
-  },
-}
+  const menuList: DrawerMenuItem[] = [
+    {
+      icon: 'o_settings',
+      label: 'Common',
+      separator: false,
+      to: '/setup'
+    },
+    {
+      icon: 'o_biotech',
+      label: 'Microscope',
+      separator: false,
+      to: '/setup/microscope'
+    },
+    {
+      icon: 'o_precision_manufacturing',
+      label: 'Tray Handler',
+      separator: false,
+      to: '/setup/tray-handler'
+    },
+    {
+      icon: 'o_opacity',
+      label: 'Sample Preparator',
+      separator: false,
+      to: '/setup/sample-preparator'
+    },
+    {
+      icon: 'o_thermostat',
+      label: 'Incubator',
+      separator: false,
+      to: '/setup/incubator'
+    },
+  ]
+
+  export default Vue.extend({
+    data () {
+      return {
+        left: false,
+        menuList
+      }
+    },
+  })
 
 </script>

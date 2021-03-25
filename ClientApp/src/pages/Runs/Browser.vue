@@ -1,5 +1,6 @@
 <template>
   <q-page>
+    <q-linear-progress :indeterminate="busy" :track-color="busy ? 'green' : 'white'" :color="busy ? 'green-13' : 'white'" />
     <div class="q-pa-md">
       <h4 class="q-ma-xs">Available Runs</h4>
     </div>
@@ -34,20 +35,21 @@
 
     data () {
       return {
+        busy: false,
         columns: [
-        { name: 'name',   label: 'Run',         align: 'left',   field: 'name', required: true, sortable: true },
-        { name: 'status', label: 'Status',      align: 'left',   field: 'status', sortable: true },
-        { name: 'desc',   label: 'Description', align: 'left',   field: 'desc', sortable: true },
-        { name: 'action', label: 'Actions',     align: 'left',   field: 'actions', sortable: true },
-      ],
-      data: [
-        { name: 'AAA', status: 'Ready', desc: 'Bla bla bla bla bla bla bla bla bla bla bla bla bla' },
-        { name: 'BBB', status: 'Ready', desc: 'Bla bla bla bla bla bla bla bla bla bla bla bla bla' }
-      ]
+          { name: 'name',   label: 'Run',         align: 'left',   field: 'name', required: true, sortable: true },
+          { name: 'status', label: 'Status',      align: 'left',   field: 'status', sortable: true },
+          { name: 'desc',   label: 'Description', align: 'left',   field: 'desc', sortable: true },
+          { name: 'action', label: 'Actions',     align: 'left',   field: 'actions', sortable: true },
+        ],
+        data: [
+          { name: 'AAA', status: 'Ready', desc: 'Bla bla bla bla bla bla bla bla bla bla bla bla bla' },
+          { name: 'BBB', status: 'Ready', desc: 'Bla bla bla bla bla bla bla bla bla bla bla bla bla' }
+        ]
+      }
     }
-  }
 
-})
+  })
 </script>
 
 <style>

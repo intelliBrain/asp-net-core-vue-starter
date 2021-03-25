@@ -1,10 +1,11 @@
 <template>
   <q-page>
+    <q-linear-progress :indeterminate="busy" :track-color="busy ? 'green' : 'white'" :color="busy ? 'green-13' : 'white'" />
     <div class="q-pa-md">
       <h4 class="q-ma-xs">Run Experiment</h4>
     </div>
     <div class="q-pa-md">
-      <q-btn class="q-mr-sm" color="white" icon="o_arrow_forward" text-color="black" label="(GOTO RESULT)" to="/runs/result" />
+      <q-btn class="q-mr-sm" color="white" icon="o_arrow_forward" text-color="black" label="(GOTO RESULT)" v-go-back=" '/runs/result' " />
     </div>
   </q-page>
 </template>
@@ -15,7 +16,12 @@
   export default Vue.extend({
     name: 'ExperimentRun',
     props: [],
-    components: {}
+    components: {},
+    data () {
+      return {
+        busy: false,
+      }
+    },
   })
 </script>
 

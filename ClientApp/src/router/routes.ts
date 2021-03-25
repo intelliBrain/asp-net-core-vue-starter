@@ -12,7 +12,7 @@ const routes: RouteConfig[] = [
     path: '/runs',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('src/pages/Runs/Index.vue') }
+      { path: '', component: () => import('src/pages/Runs/Browser.vue') }
     ]
   },
   {

@@ -34,13 +34,14 @@
 </template>
 
 <script lang="ts">
+  import Vue from 'vue'
 
-export default {
-  data () {
-    return {
-      left: false
+  export default Vue.extend({
+    data () {
+      return {
+        left: false
+      }
     }
-  }
-}
+  })
 
 </script>

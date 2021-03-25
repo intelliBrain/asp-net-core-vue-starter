@@ -1,5 +1,6 @@
 <template>
   <q-page>
+    <q-linear-progress :indeterminate="busy" :track-color="busy ? 'green' : 'white'" :color="busy ? 'green-13' : 'white'" />
     <div class="q-pa-md">
       <h4 class="q-ma-xs">Edit Run</h4>
     </div>
@@ -16,7 +17,12 @@
   export default Vue.extend({
     name: 'RunEdit',
     props: [],
-    components: {}
+    components: {},
+    data () {
+      return {
+        busy: false,
+      }
+    },
   })
 </script>
 

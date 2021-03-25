@@ -54,67 +54,66 @@
 </template>
 
 <script lang="ts">
-import {VueRouter} from 'vue-router/types/router'
-interface DrawerMenuItem {
-  icon: string
-  label: string
-  separator: boolean
-  to: string
-}
+  import Vue from 'vue'
 
-const menuList: DrawerMenuItem[] = [
-  {
-    icon: 'o_create_new_folder',
-    label: 'Initialize',
-    separator: false,
-    to: '/runs/initialize'
-  },
-  {
-    icon: 'o_camera',
-    label: 'Overview Scan',
-    separator: false,
-    to: '/runs/overview-scan'
-  },
-  {
-    icon: 'o_crop',
-    label: 'ROI Selection',
-    separator: false,
-    to: '/runs/roi-selection'
-  },
-  {
-    icon: 'o_tune',
-    label: 'Configuration',
-    separator: false,
-    to: '/runs/config'
-  },
-  {
-    icon: 'o_play_arrow',
-    label: 'Experiment Run',
-    separator: false,
-    to: '/runs/run'
-  },
-  {
-    icon: 'o_feedback',
-    label: 'Experiment Results',
-    separator: false,
-    to: '/runs/result'
+  interface DrawerMenuItem {
+    icon: string
+    label: string
+    separator: boolean
+    to: string
   }
-]
 
-export default {
-  data () {
-    return {
-      left: false,
-      menuList
+  const menuList: DrawerMenuItem[] = [
+    {
+      icon: 'o_create_new_folder',
+      label: 'Initialize',
+      separator: false,
+      to: '/runs/initialize'
+    },
+    {
+      icon: 'o_camera',
+      label: 'Overview Scan',
+      separator: false,
+      to: '/runs/overview-scan'
+    },
+    {
+      icon: 'o_crop',
+      label: 'ROI Selection',
+      separator: false,
+      to: '/runs/roi-selection'
+    },
+    {
+      icon: 'o_tune',
+      label: 'Configuration',
+      separator: false,
+      to: '/runs/config'
+    },
+    {
+      icon: 'o_play_arrow',
+      label: 'Experiment Run',
+      separator: false,
+      to: '/runs/run'
+    },
+    {
+      icon: 'o_feedback',
+      label: 'Experiment Results',
+      separator: false,
+      to: '/runs/result'
     }
-  },
-  methods: {
-    menuDisabled: function(to:string): boolean {
-      let router: VueRouter = <VueRouter> this.$router
-      //console.log(`to: [${to}] => currentRoute.Path: [${router.currentRoute.path}] => isDisabled=${router.currentRoute.path != to}`)
-      return router.currentRoute.path != to
+  ]
+
+  export default Vue.extend({
+    data () {
+      return {
+        left: false,
+        menuList
+      }
+    },
+    methods: {
+      menuDisabled: function(to:string): boolean {
+        return this.$router.currentRoute.path != to
+      }
     }
-  }
-}
+  })
 
 </script>

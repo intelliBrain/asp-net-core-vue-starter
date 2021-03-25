@@ -53,37 +53,36 @@
 </template>
 
 <script lang="ts">
-import {VueRouter} from 'vue-router/types/router'
-interface DrawerMenuItem {
-  icon: string
-  label: string
-  separator: boolean
-  to: string
-}
+  import Vue from 'vue'
 
-const menuList: DrawerMenuItem[] = [
-  {
-    icon: 'list',
-    label: 'Available Runs',
-    separator: false,
-    to: '/runs'
-  },
-]
-
-export default {
-  data () {
-    return {
-      left: false,
-      menuList
-    }
-  },
-  methods: {
-    menuDisabled: function(to:string): boolean {
-      let router: VueRouter = <VueRouter> this.$router
-      //console.log(`to: [${to}] => currentRoute.Path: [${router.currentRoute.path}] => isDisabled=${router.currentRoute.path != to}`)
-      return router.currentRoute.path != to
-    }
+  interface DrawerMenuItem {
+    icon: string
+    label: string
+    separator: boolean
+    to: string
   }
-}
+
+  const menuList: DrawerMenuItem[] = [
+    {
+      icon: 'list',
+      label: 'Available Runs',
+      separator: false,
+      to: '/runs'
+    },
+  ]
+
+  export default Vue.extend({
+    data () {
+      return {
+        left: false,
+        menuList
+      }
+    },
+    methods: {
+      menuDisabled: function(to:string): boolean {
+        return this.$router.currentRoute.path != to
+      }
+    }
+  })
 
 </script>

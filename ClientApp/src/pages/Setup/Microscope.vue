@@ -1,5 +1,6 @@
 <template>
   <q-page>
+    <q-linear-progress :indeterminate="busy" :track-color="busy ? 'green' : 'white'" :color="busy ? 'green-13' : 'white'" />
     <div class="q-pa-md">
       <h4 class="q-ma-xs">Microscope</h4>
     </div>
@@ -8,14 +9,16 @@
 
 <script lang="ts">
   import Vue from 'vue'
-  //import Header from '../components/Header.vue'
 
   export default Vue.extend({
     name: 'SetupMicroscope',
     props: [],
-    components: {
-      //Header
-    }
+    components: {},
+    data () {
+      return {
+        busy: false,
+      }
+    },
   })
 </script>
 
