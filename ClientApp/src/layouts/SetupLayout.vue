@@ -13,7 +13,7 @@
         </q-toolbar-title>
       </q-toolbar>
 
-      <q-tabs align="left">
+      <q-tabs align="left" indicator-color="transparent">
         <q-route-tab to="/runs" label="Runs" />
         <q-route-tab to="/setup" label="Setup" />
       </q-tabs>

@@ -5,8 +5,8 @@
       <h4 class="q-ma-xs">Experiment Result</h4>
     </div>
     <div class="q-pa-md">
-      <q-btn class="q-mr-sm" color="white" icon="o_stop" text-color="black" label="Back to Run Browser" v-go-back=" '/runs' " />
-      <q-btn class="q-mr-sm" color="white" icon="o_arrow_forward" text-color="black" label="Start Post Staining Round" v-go-back=" '/runs/run' " />
+      <q-btn class="q-mr-sm" color="white" icon="o_stop" text-color="black" label="Back to Run Browser" to="/runs" />
+      <q-btn class="q-mr-sm" color="white" icon="o_arrow_forward" text-color="black" label="Start Post Staining Round" to="/runs/run" />
     </div>
   </q-page>
 </template>

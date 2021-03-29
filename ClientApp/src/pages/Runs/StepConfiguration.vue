@@ -5,9 +5,9 @@
       <h4 class="q-ma-xs">Configuration</h4>
     </div>
     <div class="q-pa-md">
-      <q-btn class="q-mr-sm" color="white" icon="o_stop" text-color="black" label="Back to Run Browser" v-go-back=" '/runs' " />
-      <q-btn class="q-mr-sm" color="white" icon="o_arrow_back" text-color="black" label="Back to ROI Selection" v-go-back=" '/runs/roi-selection' " />
-      <q-btn class="q-mr-sm" color="white" icon="o_arrow_forward" text-color="black" label="Start Experiment" v-go-back=" '/runs/run' " />
+      <q-btn class="q-mr-sm" color="white" icon="o_stop" text-color="black" label="Back to Run Browser" to="/runs" />
+      <q-btn class="q-mr-sm" color="white" icon="o_arrow_back" text-color="black" label="Back to ROI Selection" to="/runs/roi-selection" />
+      <q-btn class="q-mr-sm" color="white" icon="o_arrow_forward" text-color="black" label="Start Experiment" to="/runs/run" />
     </div>
   </q-page>
 </template>
