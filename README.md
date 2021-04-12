@@ -94,7 +94,7 @@ You have three choices when it comes to how you prefer to run the app. You can e
 
 > It will take some time during the first run to download all client side dependencies.
 
-Browse to [http://localhost:5000](http://localhost:5000) for ASP.&#8203;NET Core + Vue app or browse to [http://localhost:8080](http://localhost:8080) for Vue app only.
+Browse to [http://localhost:5000](http://localhost:5000) for ASP.&#8203;NET Core + Vue app or browse to [http://localhost:8888](http://localhost:8888) for Vue app only.
 
 ![Application screenshot](./screenshot.png)
 

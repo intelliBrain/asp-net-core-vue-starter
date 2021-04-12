@@ -36,7 +36,7 @@
       <a href="http://localhost:5000/fetch-data">http://localhost:5000</a>)
       <br />
       API call would fail with status code 404 when calling from Vue app (default at
-      <a href="http://localhost:8080/fetch-data">http://localhost:8080</a>) without devServer proxy
+      <a href="http://localhost:8888/fetch-data">http://localhost:8888</a>) without devServer proxy
       settings in vue.config.js file.
     </v-alert>
   </v-container>
