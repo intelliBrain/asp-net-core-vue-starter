@@ -16,7 +16,7 @@ namespace CommandLine
 
             mode = arguments["m"] ?? arguments["mode"] ?? "start";
             https = arguments["http"] == null && arguments["https"] != null;
-            var portString = arguments["p"] ?? arguments["port"] ?? "8080";
+            var portString = arguments["p"] ?? arguments["port"] ?? "8888";
 
             if (mode != "start" && mode != "attach" && mode != "kill")
             {
@@ -50,8 +50,8 @@ namespace CommandLine
                 Console.WriteLine("     -m | --mode attach -> Attach to existing SPA server");
                 Console.WriteLine("     -m | --mode kill -> Shutdown any existing SPA server on the specified port (used after debugging in VS Code)");
                 Console.WriteLine();
-                Console.WriteLine("  Port Argument (Defaults to 8080)");
-                Console.WriteLine("     -p | --port 8080 -> Specify what port to start or attach to, minimum of 80");
+                Console.WriteLine("  Port Argument (Defaults to 8888)");
+                Console.WriteLine("     -p | --port 8888 -> Specify what port to start or attach to, minimum of 80");
                 Console.WriteLine();
                 Console.WriteLine("  HTTPS (Defaults to false)");
                 Console.WriteLine("     -https -> Uses HTTPS");
