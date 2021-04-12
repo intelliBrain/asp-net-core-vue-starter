@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using QuasarCliMiddleware;
+using System;
 
 namespace AspNetCoreVueStarter
 {
@@ -34,8 +35,7 @@ namespace AspNetCoreVueStarter
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
-            _ = CommandLine.Arguments.TryGetOptions(System.Environment.GetCommandLineArgs(), false, out string mode, out ushort port, out bool https);
+            _ = CommandLine.Arguments.TryGetOptions(Environment.GetCommandLineArgs(), false, out string mode, out ushort port, out bool https);
 
             if (env.IsDevelopment())
             {
@@ -79,14 +79,16 @@ namespace AspNetCoreVueStarter
                 {
 
                     // run npm process with client app
-                    if (mode == "start") {
+                    if (mode == "start")
+                    {
                         spa.UseQuasarCli(quasarScript: "dev", port: port, forceKill: true, https: https);
                     }
 
                     // if you just prefer to proxy requests from client app, use proxy to SPA dev server instead,
                     // app should be already running before starting a .NET client:
                     // run npm process with client app
-                    if (mode == "attach") {
+                    if (mode == "attach")
+                    {
                         spa.UseProxyToSpaDevelopmentServer($"{(https ? "https" : "http")}://localhost:{port}"); // your quasar app port
                     }
                 }

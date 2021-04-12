@@ -5,20 +5,21 @@
       <q-toolbar>
         <!-- <q-btn dense flat round icon="menu" @click="left = !left" /> -->
 
-        <q-toolbar-title>
+        <!--<q-toolbar-title>-->
           <!-- <q-avatar>
             <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
           </q-avatar> -->
-          Genexyz
-        </q-toolbar-title>
+          <!--Genexyz
+        </q-toolbar-title>-->
       </q-toolbar>
 
       <q-tabs
         align="left"
+        inline-label
         indicator-color="transparent"
       >
-        <q-route-tab to="/runs" label="Runs" />
-        <q-route-tab to="/setup" label="Setup" />
+        <q-route-tab to="/runs" label="Runs" icon="list" />
+        <q-route-tab to="/setup" label="Setup" icon="o_settings" />
       </q-tabs>
     </q-header>
 

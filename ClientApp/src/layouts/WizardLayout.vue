@@ -15,10 +15,11 @@
 
       <q-tabs
         align="left"
+        inline-label
         indicator-color="transparent"
       >
-        <q-route-tab disable to="/runs" label="Runs" />
-        <q-route-tab disable to="/setup" label="Setup" />
+        <q-route-tab disable to="/runs" label="Runs" icon="list" />
+        <q-route-tab disable to="/setup" label="Setup" icon="o_settings" />
       </q-tabs>
     </q-header>
 

@@ -5,7 +5,7 @@
         <h4 class="q-ma-xs">Start</h4>
       </div>
       <div class="q-pa-md">
-        <q-btn class="q-mr-sm" color="white" icon="o_play_arrow" text-color="black" label="Runs" to="/runs" />
+        <q-btn class="q-mr-sm" color="white" icon="list" text-color="black" label="Runs" to="/runs" />
         <q-btn class="q-mr-sm" color="white" icon="o_settings" text-color="black" label="Setup" to="/setup" />
       </div>
     </div>
